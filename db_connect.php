@@ -1,10 +1,9 @@
 <?php
     //データベース接続用変数
-    //$host     = '';
-    $host     = '';
-    $username = '';
-    $password = '';
-    $dbname   = '';
+    $host     = '*****';
+    $username = '*****';
+    $password = '*****';
+    $dbname   = '*****';
 
     // データベースへ接続
     $mysqli = new mysqli($host, $username, $password, $dbname);
@@ -17,12 +16,13 @@
         $mysqli->set_charset('utf8');
     }
 
+    // SQL文の作成
     if($_REQUEST['proc'] === 'searchdata'){
         $sql = ' SELECT * FROM practice WHERE text LIKE "%'.$_REQUEST['search_text'].'%" ';
     }else if($_REQUEST['proc'] === 'setdata'){
-        // SQL文の作成
         $sql = " SELECT * FROM practice WHERE number = 999 ";
     }
+
     // クエリの実行とデータの取得
     $db_list = array();
     if($result = $mysqli->query($sql)){
