@@ -11,21 +11,11 @@
     <header>
         <p><a href="../index.html">ホームメニューへ戻る</a></p>
     </header>
+
     <main>
-        <p>検索ボックス<input type="text" id="search_text"><input type="button" value="検索" onclick="SearchData()"></p>
-        <?php 
-            for($i=1; $i<=5; $i++){
-                echo '<div>';
-                echo '<span>テキスト',$i,'</span>';
-                echo '<span><input type="text" id="input',$i,'"></span>';
-                echo '<label for="cb',$i,'"><span><input type="checkbox" id="cb',$i,'" class="cb_use">使用する</span></label>';
-                echo '</div>';
-            }
+        <?php
+            require 'main.php';
         ?>
-        <div>
-            <input type="button" value="登録" onclick="OutputData()">
-            <input type="button" value="クリア" onclick="TextboxClear()">
-        </div>
     </main>
-    </body>
+</body>
 </html>
